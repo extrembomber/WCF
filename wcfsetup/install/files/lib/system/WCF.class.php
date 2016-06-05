@@ -670,6 +670,7 @@ class WCF {
 		
 		self::$languageObj = LanguageFactory::getInstance()->getLanguage($languageID);
 		self::getTPL()->setLanguageID(self::getLanguage()->languageID);
+		EmailTemplateEngine::getInstance()->setLanguageID(self::getLanguage()->languageID);
 	}
 	
 	/**
