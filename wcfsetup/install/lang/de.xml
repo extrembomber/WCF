@@ -1698,11 +1698,18 @@ Klicken Sie hier, um sich mit Ihrem neuen Kennwort anzumelden: {link controller=
 		<item name="wcf.acp.user.authentication.failure.environment.user"><![CDATA[Benutzer]]></item>
 		<item name="wcf.acp.user.authentication.failure.environment.admin"><![CDATA[Administration]]></item>
 		<item name="wcf.acp.user.authentication.failure.time"><![CDATA[Datum]]></item>
-		<item name="wcf.acp.user.activation.mail"><![CDATA[Hallo {@$username},
-
-Ihr Benutzerkonto auf der Website: {@PAGE_TITLE|language} wurde vom Administrator freigeschaltet.
-Sie können jetzt den vollen Funktionsumfang der Seite nutzen.]]></item>
 		<item name="wcf.acp.user.activation.mail.subject"><![CDATA[Ihr Benutzerkonto auf der Website: {@PAGE_TITLE|language} wurde freigeschaltet]]></item>
+		<item name="wcf.acp.user.activation.mail.html.headline"><![CDATA[Hallo {$mailbox->getUser()->username},]]></item>
+		<item name="wcf.acp.user.activation.mail.html.text"><![CDATA[
+<p>Ihr Benutzerkonto auf der Website: <a href="{link}{/link}">{PAGE_TITLE|language}</a> wurde von einem Administrator
+freigeschaltet. Sie können die Funktionen Ihres Benutzerkontos nun in vollem Umfang nutzen.</p>]]></item>
+		<item name="wcf.acp.user.activation.mail.plaintext"><![CDATA[Hallo {@$mailbox->getUser()->username},
+
+Ihr Benutzerkonto auf der Website: {@PAGE_TITLE|language} [1] wurde von
+einem Administrator freigeschaltet. Sie können die Funktionen Ihres
+Benutzerkontos nun in vollem Umfang nutzen.
+
+[1] {link}{/link}]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings"><![CDATA[Vorgabewerte für Benachrichtigungen bearbeiten]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.description"><![CDATA[Sie können auf dieser Seite die Standardeinstellungen für neue Benutzer festlegen, dies wirkt sich nicht auf bestehende Benutzer aus. Benutzer können abweichende Einstellungen festlegen.]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.applyChangesToExistingUsers"><![CDATA[Änderungen auch auf bestehende Benutzerkonten anwenden]]></item>
@@ -2862,13 +2869,13 @@ Wenn Sie Probleme mit der Aktivierung haben, wenden Sie sich bitte an den Admini
 		<item name="wcf.user.register.needActivation.mail.subject"><![CDATA[Aktivierung der Registrierung auf der Website: {@PAGE_TITLE|language}]]></item>
 		<item name="wcf.user.register.needActivation.mail.html.headline"><![CDATA[Hallo {$mailbox->getUser()->username},]]></item>
 		<item name="wcf.user.register.needActivation.mail.html.intro"><![CDATA[
-<p>vielen Dank für Ihre Registrierung auf der Website: <a href="{link}{/link}">{@PAGE_TITLE|language}</a>. Bevor Sie Ihr
+<p>vielen Dank für Ihre Registrierung auf der Website: <a href="{link}{/link}">{PAGE_TITLE|language}</a>. Bevor Sie Ihr
 Benutzerkonto vollständig verwenden können ist es notwendig, dass Sie einmalig die Gültigkeit Ihrer E-Mail-Adresse bestätigen:</p>]]></item>
 		<item name="wcf.user.register.needActivation.mail.html.activate"><![CDATA[Benutzerkonto aktivieren!]]></item>
 		<item name="wcf.user.register.needActivation.mail.html.outro"><![CDATA[
-<p>Ihr Aktivierungscode lautet: <code>{@$mailbox->getUser()->activationCode}</code>.</p>
+<p>Ihr Aktivierungscode lautet: <code>{$mailbox->getUser()->activationCode}</code>.</p>
 <p>Wenn Sie Probleme mit der Aktivierung Ihres Benutzerkontos haben, dann wenden Sie sich bitte an den Administrator
-unter: <a href="mailto:{@MAIL_ADMIN_ADDRESS}">{@MAIL_ADMIN_ADDRESS}</a>. Wenn Sie sich nicht bei uns registriert haben,
+unter: <a href="mailto:{MAIL_ADMIN_ADDRESS}">{MAIL_ADMIN_ADDRESS}</a>. Wenn Sie sich nicht bei uns registriert haben,
 dann können Sie diese E-Mail ignorieren.</p>]]></item>
 		<item name="wcf.user.register.needActivation.mail.plaintext"><![CDATA[Hallo {$mailbox->getUser()->username},
 
